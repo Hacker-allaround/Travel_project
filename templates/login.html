@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        .login-page {
+         width: 360px;
+         padding: 8% 0 0;
+         margin: auto;
+        }
+        .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+    </style>
+</head>
+<body style="background-color:#8cff66;text-align:center;">
+<div class="login-page">
+<h1>LOGIN</h1><br>
+    <div class="form">
+<form class="register-form" action="login" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username"><br>
+    <input type="password" name="password" placeholder="Password"><br><br><br>
+    <input type="submit">
+
+</form>
+{% for k in messages %}
+<h4>{{k}}</h4>
+{% endfor %}
+</div>
+</div>
+</body>
+</html>
